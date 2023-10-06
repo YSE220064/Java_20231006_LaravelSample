@@ -28,4 +28,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/about', function () {
+    return "ABOUTTO!";
+});
+
+Route::get('/item/{id}', function ($id) {
+    $message = "Aitemu no Aidi wa; {$id}";
+    return $message;
+});
+
 require __DIR__.'/auth.php';
