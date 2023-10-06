@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,12 @@ Route::get('/about', function () {
 
 Route::get('/item/{id}', function ($id) {
     $message = "Aitemu no Aidi wa; {$id}";
+    return $message;
+});
+
+Route::get('/search', function (Request $request) {
+    //dd($request);
+    $message = "Kore wa nani ka na? = {$request->keyword}";
     return $message;
 });
 
